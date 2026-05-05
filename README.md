@@ -1,4 +1,4 @@
-# 🧠 Fake News Detection System
+# 🧠 AI Fake News Detection System
 
 An AI-powered web application that classifies news articles as **Fake or Real** using Natural Language Processing (NLP) and Machine Learning.
 
@@ -7,19 +7,20 @@ An AI-powered web application that classifies news articles as **Fake or Real** 
 ## 🚀 Features
 
 * 🔍 Real-time fake news detection
-* 📊 Confidence score & probability visualization
-* 🧠 NLP preprocessing (cleaning, tokenization)
-* 📈 TF-IDF + Logistic Regression model
-* 🎨 Premium Streamlit UI (Dark theme + dashboard)
+* 📊 Confidence score with visual progress bar
+* 📈 Probability breakdown (Fake vs Real)
+* 🧠 NLP preprocessing (cleaning, stopword removal)
+* 🔎 Keyword-based explanation of predictions
+* 🎨 Premium Streamlit UI (Dark theme, dashboard layout)
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Python
-* Scikit-learn
-* NLTK
-* Streamlit
+* **Programming Language:** Python
+* **Machine Learning:** Scikit-learn (Logistic Regression)
+* **NLP:** NLTK, TF-IDF Vectorization
+* **Frontend/UI:** Streamlit
 
 ---
 
@@ -28,10 +29,13 @@ An AI-powered web application that classifies news articles as **Fake or Real** 
 ```
 fake-news-detector/
 │
-├── app.py
-├── model.py
-├── utils.py
-├── requirements.txt
+├── app.py                 # Streamlit UI
+├── model.py               # Model training script
+├── utils.py               # Text preprocessing
+├── model.pkl              # Trained ML model
+├── vectorizer.pkl         # TF-IDF vectorizer
+├── requirements.txt       # Dependencies
+└── README.md              # Project documentation
 ```
 
 ---
@@ -39,14 +43,24 @@ fake-news-detector/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your-username/fake-news-detector.git
+git clone https://github.com/Jeevakumar415/fake-news-detector.git
 cd fake-news-detector
 pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Run the App
+## ▶️ Run the Application
+
+### Option 1: Direct Run (Using Pre-trained Model)
+
+```bash
+python -m streamlit run app.py
+```
+
+---
+
+### Option 2: Train Model First (If needed)
 
 ```bash
 python model.py
@@ -57,20 +71,52 @@ python -m streamlit run app.py
 
 ## 📊 Model Details
 
-* Algorithm: Logistic Regression
-* Feature Extraction: TF-IDF (bi-grams)
-* Accuracy: ~70–85% (after optimization)
+* **Algorithm:** Logistic Regression
+* **Feature Extraction:** TF-IDF (Unigrams + Bigrams)
+* **Dataset:** Combined multiple labeled text datasets (Fake & Legit news)
+* **Accuracy:** ~65% – 85% (after optimization)
 
 ---
 
-## 🎯 Future Improvements
+## 🧠 How It Works
 
-* Upgrade to BERT model
-* Add real-time news API
-* Improve explainability
+1. User inputs news text
+2. Text is preprocessed (cleaning, stopword removal)
+3. TF-IDF converts text into numerical features
+4. Machine Learning model predicts Fake or Real
+5. UI displays:
+
+   * Prediction result
+   * Confidence score
+   * Probability breakdown
+   * Key influencing words
+
+---
+
+## ⚠️ Note
+
+* Dataset is not included in this repository to keep it lightweight
+* Pre-trained model files (`model.pkl`, `vectorizer.pkl`) are included for direct usage
+* If needed, you can retrain the model using your own dataset
+
+---
+
+## 🚀 Future Enhancements
+
+* Upgrade to Transformer models (BERT)
+* Real-time news API integration
+* Explainable AI (SHAP/LIME)
+* Deployment on cloud platforms
 
 ---
 
 ## 👨‍💻 Author
 
-Jeevakumar (MCA Student)
+**Jeevakumar**
+MCA Student | AI Enthusiast
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and share your feedback!
