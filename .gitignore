@@ -1,5 +1,30 @@
+# Project-specific
 __pycache__/
 *.pyc
 *.pkl
 archive/
 .env
+
+# Python cache
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv
+env/
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/secrets.toml
